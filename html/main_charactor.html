@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <script src="./js/pageTransition.js"></script>
+    <style type="text/css">
+        body {
+            margin: 0;
+            text-align: center;
+            padding-bottom: 50px;
+            background-image: url("img/pc.png");
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center center;
+        }
+        .wrapper{
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            background-color: rgba(255, 255, 255, 0);
+            height: 100vh;
+        }
+        .wrapper img{
+            position: absolute;
+            top: 86.5%;
+            left: 87.2%;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <img src=./img/power.png onclick="pageTransition('boot.html')">
+    </div>
+</body>
+</html>

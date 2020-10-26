@@ -1,0 +1,115 @@
+html, body{ height:100%; text-align: center;}
+td{ vertical-align: top;}
+
+.room {
+    background-color: #696969;
+    height: 100%;
+    width: 100%;
+    display: block;
+    padding: 2%;
+}
+.room th img{
+    width: 10%;
+}
+.room tr{
+    height: 90%;
+}
+.room td{
+    height: 90%;
+}
+
+.windowtr{
+    height: 10%;
+    width: 100%;
+}
+
+.stack {
+    width: 60%;
+    height: 91%;
+    margin-left: 5%;
+}
+
+.obj {
+    width: 80%;
+    height: 13%;
+    margin: 0 auto;
+}
+
+.pcs {
+    list-style: none;
+    text-align: center;
+}
+.pcs li{
+    display: table-cell;
+}
+.pcs img{
+    width: 15%;
+}
+.pcs a img{
+    width: 15%;
+}
+
+.poster {
+    width: 5%;
+    line-height: 680%;
+}
+.poster a{
+}
+.poster a img{
+    transform: rotate(-90deg);
+    width: 5%;
+}
+
+.door {
+    width: 5%;
+}
+.door img{
+    transform: rotate(90deg);
+    width: 100%;
+    margin: 60% 0;
+}
+
+
+.furniture{
+    position: absolute;
+    overflow: hidden;
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+.furniture:hover{
+    transform: scale(1.4);
+    transition-duration: 0.5s;
+}
+#toppcs .furniture:hover{
+    transform: scale(1.4) rotate(180deg);
+    transition-duration: 0.5s;
+}
+.poster .furniture:hover{
+    transform: scale(1.4) rotate(-90deg);
+    transition-duration: 0.5s;
+}
+
+/*  ----- 以下id -----  */
+
+#desk {
+    background-color: #DDDDDD;
+}
+
+#toppcs img{
+    transform: rotate(180deg);
+}
+
+#printer {
+    display: inline-block;
+}
+#printer img{
+    width: 8%;
+}
+
+#pc img{
+    width: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    margin-left: 3.2%;
+    z-index: 10;
+}

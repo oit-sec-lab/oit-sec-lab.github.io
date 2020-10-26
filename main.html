@@ -1,0 +1,129 @@
+<html>
+    <head>
+        <meta charset='utf-8'/>
+        <title>タイトル</title>
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <!-- drawer.css -->
+        <link rel="stylesheet" href="./drawer.css">
+        <!-- jquery & iScroll -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll.min.js"></script>
+        <!-- drawer.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/drawer/3.2.2/js/drawer.min.js"></script>
+        <script src="./jquery.colorbox-min.js"></script>
+        <link rel="stylesheet" href="./colorbox.css" />
+		<script>
+			$(document).ready(function(){
+				$(".iframe").colorbox({iframe:true, width:"80%", height:"80%"});
+			});
+		</script>
+    </head>
+    <body class="drawer drawer--right">
+        <header role="banner">
+            <button type="button" class="drawer-toggle drawer-hamburger">
+                <span class="drawer-hamburger-icon"></span>
+            </button>
+            <nav class="drawer-nav" role="navigation">
+                <ul class="drawer-menu">
+                    <li><p class="drawer-brand">メニュー</p></li>
+                    <li class="drawer-menu-item"><a class='iframe' href="./html/story.html"><div class="drawer-toggle Button t-widthFull">あらすじ&遊び方</div></a></li>
+                    <li><a class="drawer-menu-item" href="#">none</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <table class="room">
+            <tr class="windowtr">
+                <th></th>
+                <th>
+                    <img src="./img/window.png" align="left">
+                    <img src="./img/window.png" align="right">
+                </th>
+                <th></th>
+            </tr>
+            <tr>
+                <td class="poster">
+                    <a id="poster" class='iframe' href="./html/poster1.html"><img src="./img/poster3.png" class="furniture"></a><br>
+                    <a id="poster" class='iframe' href="./html/poster2.html"><img src="./img/poster1.png" class="furniture"></a><br>
+                    <a id="poster" class='iframe' href="./html//poster3.html"><img src="./img/poster2.png" class="furniture"></a><br>
+                    <a id="poster" class='iframe' href="./html/poster11.html"><img src="./img/poster3.png" class="furniture"></a><br>
+                </td>
+                <td class="stack">
+                        <div class="obj"><br></div><!--通路-->
+                        <div class="obj" id="desk"><!--机-->
+                            <ul class="pcs" id="toppcs">
+                                <li><img src="./img/pc.png"></li>
+                                <li><img src="./img/pc.png"></li>
+                                <li><img src="./img/pc.png"></li>
+                                <li><img src="./img/pc.png"></li>
+                                <li><a id="pc" class='iframe' href="./html/usedPC.html"><img src="./img/pc_login.png" class="furniture"></a></li>
+                                <li><img src="./img/pc.png"></li>
+                            </ul>
+                            <ul class="pcs">
+                                <li><img src="./img/pc.png"></li>
+                                <li><a id="pc" class='iframe' href="./html/tukue.html"><img src="./img/pc.png" class="furniture"></a></li>
+                                <li><img src="./img/pc.png"></li>
+                                <li><img src="./img/pc.png"></li>
+                                <li><img src="./img/pc.png"></li>
+                                <li><img src="./img/pc.png"></li>
+                            </ul>
+                        </div>
+                        <div class="obj"><br></div><!--通路-->
+                        <div class="obj" id="desk"><!--机-->
+                            <ul class="pcs" id="toppcs">
+                                <li><a id="pc" class='iframe' href="./html/textbook.html"><img src="./img/pc.png" class="furniture"></a></li>
+                                <li><img src="./img/pc.png"></li>
+                                <li><img src="./img/pc.png"></li>
+                                <li><img src="./img/pc.png"></li>
+                                <li><img src="./img/pc.png"></li>
+                                <li><img src="./img/pc.png"></li>
+                            </ul>
+                            <ul class="pcs">
+                                <li><img src="./img/pc.png"></li>
+                                <li><img src="./img/pc.png"></li>
+                                <li><img src="./img/pc.png"></li>
+                                <li><a id="pc" class='iframe' href="./html/ensyuu2.html"><img src="./img/pc_on.png" class="furniture"></a></li>
+                                <li><img src="./img/pc.png"></li>
+                                <li><img src="./img/pc.png"></li>
+                            </ul>
+                        </div>
+                        <div class="obj"><br></div><!--通路-->
+                        <div class="obj">
+                            <div  id="desk"><!--机-->
+                                <ul class="pcs" id="toppcs">
+                                    <li><img src="./img/pc.png"></li>
+                                    <li><img src="./img/pc.png"></li>
+                                    <li><a id="pc" class='iframe' href="./html/person.htm"><img src="./img/pc_on.png" class="furniture"></a></li>
+                                    <li><img src="./img/pc.png"></li>
+                                    <li><img src="./img/pc.png"></li>
+                                    <li><img src="./img/pc.png"></li>
+                                </ul>
+                                <ul class="pcs">
+                                    <li><img src="./img/pc.png"></li>
+                                    <li><img src="./img/pc.png"></li>
+                                    <li><img src="./img/pc.png"></li>
+                                    <li><img src="./img/pc.png"></li>
+                                    <li><a id="pc" class='iframe' href="./html/main_charactor.html"><img src="./img/pc.png" class="furniture"></a></li>
+                                    <li><img src="./img/pc.png" style="opacity: 0;"></li>
+                                </ul>
+                            </div>
+                            <a id="printer" class='iframe' href="./html/printing machine.htm"><img src="./img/printer.PNG" class="furniture"></a>
+                        </div>
+
+                </td>
+                <td class="door">
+                    <img src="./img/door.png"><br>
+                    <br><br>
+                    <img src="./img/door.png"><br>
+                </td>
+            </tr>
+        </table>
+
+    </body>
+    <script>
+        $(document).ready(function() {
+             $('.drawer').drawer();
+        });
+    </script>
+</html>
+

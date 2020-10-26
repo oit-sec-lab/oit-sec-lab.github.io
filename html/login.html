@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <script src="js/pageTransition.js"></script>
+    <script src="js/chengeChar.js"></script>
+    <script>
+        var Login = {};
+
+        Login.doLogin = function doLogin(loginForm) {
+
+            //空チェック
+            if(loginForm.username.value == '') {
+                return Login.doError('ユーザー名を入力してください。');
+            }
+            if(loginForm.password.value == '') {
+                return Login.doError('パスワードを入力してください。');
+            }
+
+            if(loginForm.username.value == 'EDU-e1v21215'){
+                if(toHex(loginForm.password.value) == '676f6d7568616e6e6d612d'){
+                    return Login.doSuccusess('success.html');
+                }else{
+                    return Login.doError('ユーザー名またはパスワードが間違っています・');
+                }
+            }else{  
+                return Login.doError('ユーザー名またはパスワードが間違っています・');
+            }
+        }
+        Login.doSuccusess = function doSuccusess(msg) {
+            pageTransition(msg);
+            return false;
+        }
+        Login.doError = function doError(msg) {
+            alert(msg);
+            return false;
+        }
+    </script>
+    <style type="text/css">
+        body {
+            margin: 0;
+            text-align: center;
+            background-image: url("img/login.png");
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center center;
+        }
+        .wrapper{
+            position: relative;
+            background-color: rgba(255, 255, 255, 0);
+            height: 100vh;
+        }
+        .wrapper form {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform : translate(-50%,-50%);
+            -ms-transform: translate(-50%, -50%);
+            transform : translate(-50%,-50%);
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <form id="loginForm" action="" method="post" onsubmit="return Login.doLogin(this)">
+            <p>UserName : <input type="text" name="username" /></p>
+            <p>Password : <input type="password" name="password" /></p>
+            <p><input type="submit" value="ログイン" /></p>
+        </form>
+    </div>
+</body>
+</html>

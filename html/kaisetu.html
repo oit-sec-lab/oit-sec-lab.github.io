@@ -1,0 +1,151 @@
+<html>
+    <head>
+        <meta charset='utf-8'/>
+        <title>解説</title>
+        <style type="text/css">
+            body {background-color: #99FF99;}
+            .main{ width: 80%; margin: auto; text-align: center;}
+            .main img{width: 80%; object-fit: contain;}
+            .main p{margin-left: 11%; text-align: left;}
+            .title{text-align: center;}
+            .title h1{border-bottom: solid 1px #CC66CC;}
+            .title h2{border-bottom: solid 1px #CC66CC;}
+            .desc{padding: 10px; margin-bottom: 10px; border: 1px dashed #333333; background-color: #ffff99;}
+            .desc img{width: 50%;}
+            p{table-layout: fixed; word-wrap: break-word;}
+            .hidden_box {margin: 2em 0; padding: 0;}
+            .hidden_box label {padding: 15px; font-weight: bold; border: solid 2px black; cursor :pointer;}
+            .hidden_box label:hover { background: #efefef;}
+            .hidden_box input { display: none;}
+            .hidden_box .hidden_show { height: 0; padding: 0; overflow: hidden; opacity: 0; transition: 0.8s; }
+            .hidden_box input:checked ~ .hidden_show { padding: 10px 0; height: auto; opacity: 1;}
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <div class="title" style=" padding: 2%;"><h1>解説</h1></div>
+            <div class="desc">
+                <div class="title"><h2>演習室PC(主人公が使用)</h2></div>
+                <p>
+                    現状ではユーザー名とパスワードのみですが、二段階認証があることであなたのような不正な侵入を防ぐことができます。<br>
+                    重要な情報があるアカウントなどには必ず二段階認証などをしましょう。
+                </p>
+                <div class="hidden_box">
+                    <label for="label1">以下オタク向け解説</label>
+                    <input type="checkbox" id="label1"/>
+                    <div class="hidden_show">
+                      <p>
+                          この問題は、iframeを使って画面内に子ウィンドウを表示していることから、別タブで開くことが可能です。<br>
+                          このことを利用して<a href="./login.html" target=brank>ログイン画面のhtml</a>を開き、そのコードを読むことで無理やりログインすることができます。<br>
+                          具体的には、htmlのソースコード内のJavaScriptを使ってログインの認証がされています。<br>
+                          JavaScriptはクライアント側で処理をするものなので、これらの情報がすべてクライアントに行きます。<br>
+                          今回はデモのようなものですが、実際のログイン処理ではほかのユーザーの情報も一緒に送られる(=流出)ことになります。<br>
+                          また、そのパスワードも「使いまわし」の対策などのため元に戻せないようハッシュ化を言う処理をしますが、これはせずに(16進数)に変換しただけです。簡単に戻せます。(hex to asciiで検索)<br>
+                          そして恐ろしいことにこれに似たシステムが実際に稼働していました。<a href="https://qiita.com/YSRKEN/items/0095cf75be3f607b0f98" target="brank">「世界最悪のログイン処理コード」を解説してみた</a>を参照ください。
+                      </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="desc">
+                <div class="title"><h2>演習室PC(寝ている学生)</h2></div>
+                <img src="./img/sleep.jpg">
+                <p>
+                    誰かが使っているPCです。クリックするとショルダーハック(後ろからのぞき込むこと)できます。<br>
+                    ユーザー名「EDU-e1v21210」パスワード「」と空欄になっています。<br>
+                    なお本人はなぜかこの状況で寝てます。<br>
+                </p>
+                <p>
+                    このように、自分の知らないところで自分のパソコンが操作される可能性は十分にあります。<br>
+                    一度離籍する場合や、仮眠をとる場合は必ず画面をロックしましょう。<br>
+                    Windowsでは「Windowsキー+Lキー」を押すとログイン時の画面にできます。
+                </p>
+                <p>
+                    この問題では、この学生からユーザー名の形式が入手できます。
+                </p>
+            </div>
+
+            <div class="desc">
+                <div class="title"><h2>演習室PC(演習している人)</h2></div>
+                <img src="./img/ensyuusitu2.jpg">
+                <p>
+                    誰かが使っているPCです。たとえ自分が使用しているとしても後ろから誰かがのぞき込んでいる可能性は十分あります。<br>
+                    パスワードを入力するなど、誰かに見られるとまずいことをする場合はのぞき込んでいる人がいないことを確認してからにしましょう。
+                </p>
+            </div>
+
+            <div class="desc">
+                <div class="title"><h2>演習室PC(しゃべる大学生)</h2></div>
+                <img src="./img/person.jpg">
+                <p>
+                    この場合はただの優しい大学生ですが、社会では「秘密」と呼ばれる(特に重要な秘密を「機密」という)情報があります。<br>
+                    特に国の重要な秘密である「国家機密」に関しては未遂でさえ重い罪に問われます。<br>
+                    特にビジネスにおいては自分の言う情報は話してよい情報なのかは吟味してしゃべるようにしましょう。
+                </p>
+                <p>
+                    この問題では、この学生からユーザー名の形式とパスワードの手掛かりが入手できます。
+                </p>
+            </div>
+
+            <div class="desc">
+                <div class="title"><h2>ポスター1</h2></div>
+                <img src="./img/kinshi.jpg" style="width:30%">
+                <p>
+                    自習室での飲食は禁止という話です。<br>
+                    PCがたくさんある部屋ではたいてい床下に配線をしていて、万が一飲み物などをこぼすと大変です。<br>
+                    また、濡れた傘なども厳禁ですので気を付けてください。
+                </p>
+            </div>
+
+            <div class="desc">
+                <div class="title"><h2>ポスター2</h2></div>
+                <img src="./img/ITpas.jpg" style="width:30%">
+                <p>
+                    ITパスポートの試験広告です。<br>
+                    回し者ではないですが、内容は高校の情報の授業に毛が生えた程度(下手するとそれより簡単)です。<br>
+                    過去問を調べると出てきますし、難易度もかなり低いので一度目を通してみてはいかがでしょうか。
+                </p>
+            </div>
+
+            <div class="desc">
+                <div class="title"><h2>ポスター3</h2></div>
+                <img src="./img/poster(1).png" style="width:30%">
+                <p>
+                    自習室ではしゃべらないで下さいという話です。<br>
+                    大工大の情報科学部では自習室と演習室を兼ねているので、周りの迷惑にならないようにする配慮が必要です。
+                </p>
+            </div>
+
+            <div class="desc">
+                <div class="title"><h2>ポスター4</h2></div>
+                <img src="./img/poster3.png">
+                <p>
+                    具体的なプログラミングを初めてする人にとっては非常に難易度が高い人もいます。<br>
+                    そのため、プログラミングを教えてくれる人が情報センターと呼ばれるところに常駐しています。<br>
+                    また、大工大、情報科学部では必携ノートPCを2018年度生より持たせているため、このようなサポートがあります、
+                </p>
+            </div>
+
+            <div class="desc">
+                <div class="title"><h2>机</h2></div>
+                <img src="./img/tukue.jpg">
+                <p>
+                    机です。誰がどう見ても机です。...多分
+                </p>
+            </div>
+
+            <div class="desc">
+                <div class="title"><h2>忘れ物の教科書</h2></div>
+                <img src="./img/textbook2.png">
+                <p>
+                    これが最悪です。重要なものを忘れないでください。もし見かけた場合はそっと事務室まで届けてください。<br>
+                    そして、変更後のパスワードは覚えるようにしてください。何かに書くとこの問題のように万が一で見られることがあります。<br>
+                    どうしても書く場合は、パスワードマネージャというアプリなどを使用するなど、それ自体を見られなくする工夫をしましょう。<br>
+                    また、万が一パスワードを使いまわしている場合、このパスワードを使用することでほかのサイトでログインできる可能性があります<br>
+                    パスワードの使いまわしは厳禁です。
+                </p>
+            </div>
+
+        </div>
+    </body>
+</html>
