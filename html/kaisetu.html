@@ -19,6 +19,7 @@
             .hidden_box input { display: none;}
             .hidden_box .hidden_show { height: 0; padding: 0; overflow: hidden; opacity: 0; transition: 0.8s; }
             .hidden_box input:checked ~ .hidden_show { padding: 10px 0; height: auto; opacity: 1;}
+            #src{ border: solid 2px black; padding: 2%; background-color: #444444; width: 70%; text-align: left; margin: auto; color: white; line-height: 1.2em;}
         </style>
     </head>
     <body>
@@ -31,17 +32,33 @@
                     重要な情報があるアカウントなどには必ず二段階認証などをしましょう。
                 </p>
                 <div class="hidden_box">
-                    <label for="label1">以下オタク向け解説</label>
+                    <label for="label1">別解の解説を表示する</label>
                     <input type="checkbox" id="label1"/>
                     <div class="hidden_show">
                       <p>
                           この問題は、iframeを使って画面内に子ウィンドウを表示していることから、別タブで開くことが可能です。<br>
-                          このことを利用して<a href="./login.html" target=brank>ログイン画面のhtml</a>を開き、そのコードを読むことで無理やりログインすることができます。<br>
+                          このことを利用して<a href="./login.html" target=brank>ログイン画面のhtml</a>を開き、そのソースコードを読むことで無理やりログインすることができます。<br>
                           具体的には、htmlのソースコード内のJavaScriptを使ってログインの認証がされています。<br>
                           JavaScriptはクライアント側で処理をするものなので、これらの情報がすべてクライアントに行きます。<br>
                           今回はデモのようなものですが、実際のログイン処理ではほかのユーザーの情報も一緒に送られる(=流出)ことになります。<br>
                           また、そのパスワードも「使いまわし」の対策などのため元に戻せないようハッシュ化を言う処理をしますが、これはせずに(16進数)に変換しただけです。簡単に戻せます。(hex to asciiで検索)<br>
+                          今回の主要なログイン処理コードは以下です。</p>
+                          <div id="src"><code>
+<font color=#FF77FF>if</font>(<font color=#99FFFF>loginForm</font>.<font color=#99FFFF>username</font>.<font color=#99FFFF>value</font> == <font color=FF9900>'EDU-e1v21215'</font>){<br>
+&emsp;<font color=#FF77FF>if</font>(<font color=#FFFF99>toHex</font>(<font color=#99FFFF>loginForm</font>.<font color=#99FFFF>password</font>.<font color=#99FFFF>value</font>) == <font color=FF9900>'676f6d7568616e6e6d612d'</font>){<br>
+&emsp;&emsp;<font color=#FF77FF>return</font> <font color=#99FFFF>Login</font>.<font color=#FFFF99>doSuccusess</font>(<font color=FF9900>'success.html'</font>);<br>
+&emsp;}<font color=#FF77FF>else</font>{<br>
+&emsp;&emsp;<font color=#FF77FF>return</font> <font color=#99FFFF>Login</font>.<font color=#FFFF99>doError</font>(<font color=FF9900>'ユーザー名またはパスワードが間違っています。'</font>);<br>
+&emsp;}<br>
+}<font color=#FF77FF>else</font>{<br>
+&emsp;<font color=#FF77FF>return</font> <font color=#99FFFF>Login</font>.<font color=#FFFF99>doError</font>(<font color=FF9900>'ユーザー名またはパスワードが間違っています。'</font>);<br>
+}<br>
+                          </code></div>
+                      <p>
                           そして恐ろしいことにこれに似たシステムが実際に稼働していました。<a href="https://qiita.com/YSRKEN/items/0095cf75be3f607b0f98" target="brank">「世界最悪のログイン処理コード」を解説してみた</a>を参照ください。
+                      </p>
+                      <p>
+                          これ以上のレベルとして高難易度を用意しました。挑戦をしてみたい方は<a target=blank href="./hard_login.html">どうぞ</a>。
                       </p>
                     </div>
                 </div>
