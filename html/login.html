@@ -18,7 +18,7 @@
 
             if(loginForm.username.value == 'EDU-e1v21215'){
                 if(toHex(loginForm.password.value) == '676f6d7568616e6e6d612d'){
-                    return Login.doSuccusess('success.html');
+                    return Login.doSuccess('success.html');
                 }else{
                     return Login.doError('ユーザー名またはパスワードが間違っています・');
                 }
@@ -26,7 +26,7 @@
                 return Login.doError('ユーザー名またはパスワードが間違っています・');
             }
         }
-        Login.doSuccusess = function doSuccusess(msg) {
+        Login.doSuccess = function doSuccess(msg) {
             pageTransition(msg);
             return false;
         }
